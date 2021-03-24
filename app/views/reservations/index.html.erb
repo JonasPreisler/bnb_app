@@ -1,0 +1,46 @@
+<div class='table-responsive'>
+  <table class='table'>
+    <thead>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Currency</th>
+      <th>Nights</th>
+      <th>Number of guests</th>
+      <th>Total paid amount</th>
+      <th>Payout amount</th>
+      <th>Security amount</th>
+      <th>Total amount</th>
+      <th>Guest</th>
+      <th>Guest email</th>
+      <th>Phone numbers</th>
+    </thead>
+    <tbody>
+      <% @reservations.all.each do |reservation| %>
+        <tr>
+          <td><%= reservation.start_date.strftime("%d %b %Y") %></td>
+          <td><%= reservation.end_date.strftime("%d %b %Y") %></td>
+          <td><%= reservation.currency %></td>
+          <td><%= reservation.nights %></td>
+          <td><%= reservation.number_of_guests %></td>
+          <td><%= reservation.total_paid_amount %></td>
+          <td><%= reservation.payout_amount %></td>
+          <td><%= reservation.security_amount %></td>
+          <td><%= reservation.total_amount %></td>
+          <td><%= reservation.guest.first_name %> <%= reservation.guest.last_name %></td>
+          <td><%= reservation.guest.email %></td>
+          <td><%= reservation.guest.phone_numbers.join('<br>').html_safe %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
+<style>
+
+  th, td {
+    white-space: nowrap;
+  }
+
+</style>
