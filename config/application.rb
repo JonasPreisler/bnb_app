@@ -16,7 +16,7 @@ module Bnb
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.hosts << ['g287.hatchboxapp.com', "976d11eb106c.ngrok.io"]
+    config.hosts << "976d11eb106c.ngrok.io" if Rails.env.development?
 
   end
 end
