@@ -5,11 +5,22 @@
 
 Copy/paste the payloads below (copy/pasted from assignment description) and POST to the online or local app:
 
-/api/reservations
+http://g287.hatchboxapp.com/api/reservations
 
 ...or... 
 
 [YOUR-NGROK-LINK]/api/reservations
+(remember to add your ngrok link in 'config.hosts' in application.rb)
+
+--------------------------------------------------
+
+New reservation will always be created. 
+
+If you POST with an email that already exists in the Guest table, only a reservation will be created, belonging to that guest.
+
+If email doesn't exist, a new guest will be created. 
+
+See the data created on http://g287.hatchboxapp.com/.
 
 --------------------------------------------------
 
